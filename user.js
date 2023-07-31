@@ -53,10 +53,17 @@ sequelize
 	})
 	.then((users) => {
 		users.forEach((user) => {
-			console.log(
-				user.dataValues.name,
-				user.dataValues.product.title,
-				user.dataValues.product.price
-			);
+			`
+      <div style="border: 1px solid #000; 
+      width: fit-content;
+      display: flex;
+      align-items: center;
+      height: 20px;
+      margin: 0 0 20px 0; 
+      padding: 0 10px;">
+      <p style="font-size: 16px; line-height: 5px;"
+        >${user.dataValues.name}:       ${user.dataValues.product.title}       Price: ${user.dataValues.product.price}</p>
+      </div>
+            `;
 		});
 	});
