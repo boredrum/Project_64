@@ -52,8 +52,9 @@ sequelize
 		});
 	})
 	.then((users) => {
+		const content = [];
 		users.forEach((user) => {
-			`
+			const userContent = `
       <div style="border: 1px solid #000; 
       width: fit-content;
       display: flex;
@@ -65,5 +66,7 @@ sequelize
         >${user.dataValues.name}:       ${user.dataValues.product.title}       Price: ${user.dataValues.product.price}</p>
       </div>
             `;
+			content.push(userContent);
 		});
+		console.log(content);
 	});
